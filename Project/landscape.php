@@ -10,19 +10,20 @@
   	<h2>Welcome To this page</h2>
   </div>
 
-  <div class="input-group">
-  		<label>Login</label>
-      <input type="submit" value="Login" class="btn" onClick="myFunction()"/>
-     <script>
-       function myFunction() {
-        window.location.href="login.php";
-       }
-     </script>
-      <label>Register</label>
-      <input type="submit" value="Register" class="btn" onClick="myFunction()"/>
-     <script>
-       function myFunction() {
-         window.location.href="register.php";
-       }
-     </script>
+  <div class="content">
+
+    <h2>Login</h2>
+        <p>
+        Have an account 
+            <input type="button" class="btn" value="Login" onclick="window.location = 'login.php';">
+        </p>
+    <hr>
+    <h2>Register</h2>
+        <p>
+        Not yet a member? 
+            <input type="button" class="btn" value="Register" onclick="window.location = 'register.php';">
+        </p>
+
   </div>
+</body>
+</html>
