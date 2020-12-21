@@ -1,81 +1,88 @@
-<?php 
-  session_start(); 
 
-  if (!isset($_SESSION['username'])) {
-  	$_SESSION['msg'] = "You must log in first";
-  	header('location: login.php');
-  }
-  if (isset($_GET['logout'])) {
-  	session_destroy();
-  	unset($_SESSION['username']);
-  	header("location: login.php");
-  }
-?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style1.css">
 </head>
 <body>
 
-<div class="header">
-	<h2>Home Page</h2>
-</div>
-<div class="content">
-  	<!-- notification message -->
-  	<?php if (isset($_SESSION['success'])) : ?>
-      <div class="error success" >
-      	<h3>
-          <?php 
-          	echo $_SESSION['success']; 
-          	unset($_SESSION['success']);
-          ?>
-      	</h3>
-      </div>
-  	<?php endif ?>
+	
+	<div class="header">
+		<h2>Home Page</h2>
+	</div>
 
-    <!-- logged in user information -->
-    <?php  if (isset($_SESSION['username'])) : ?>
-    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-    	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
-    <?php endif ?>
+	<form method="post" action="index.php">
+	<div class="content">
 
-	<div>
-		<p>Comment box</p>
+		<!-- notification message -->
+		<?php if (isset($_SESSION['success'])) : ?>
+		<div class="error success" >
+			<h3>
+			<?php 
+				echo $_SESSION['success']; 
+				unset($_SESSION['success']);
+			?>
+			</h3>
+		</div>
+		<?php endif ?>
+		
+		<!-- search user information -->
+
+		<div class="input-right">			
+				<label>Search</label>
+				<input type="text" name="search">
+				<input type="submit" name="submit" value="search">
+				<?php include('server.php') ?>
+		</div> 
+
+		<!-- logged in user information -->
+		<?php  if (isset($_SESSION['username'])) : ?>
+			<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+			<p> Click here to <a href="logout.php" >Logout </a></p>	
+			
+		<?php endif ?>
+		
+
 		<div>
-			<table id="commentTable">
+			<p>Comment box</p>
+			<div>
+				<table id="commentTable">
+					<colgroup>
+						<col width="25%"/>
+						<col width="75%"/>
+					</colgroup>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Comment</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+
 				<colgroup>
-					<col width="25%"/>
-					<col width="75%"/>
+					<col widht="25%" style="vertical-align:top;"/>
+					<col widht="75%" style="vertical-align:top;"/>
 				</colgroup>
-				<thead>
+				<table>
 					<tr>
-						<th>Name</th>
-						<th>Comment</th>
+						<td><label for="name">Name</label></td>
+						<td><input type="text" name="name"/></td>
 					</tr>
-				</thead>
-			</table>
+					<tr>
+						<td><label for="comment">Comment:</label></td>
+						<td><textarea name="comment" rows="10" cols="50"></textarea></td>
+					</tr>
+					<tr><td colspan="2"><input type="submit" name="comment" value="Comment"></td></tr>
+				</table>
+			</form>	
 		</div>
 
-			<colgroup>
-				<col widht="25%" style="vertical-align:top;"/>
-				<col widht="75%" style="vertical-align:top;"/>
-			</colgroup>
-			<table>
-				<tr>
-					<td><label for="name">Name</label></td>
-					<td><input type="text" name="name"/></td>
-				</tr>
-				<tr>
-					<td><label for="comment">Comment:</label></td>
-					<td><textarea name="comment" rows="10" cols="50"></textarea></td>
-				</tr>
-				<tr><td colspan="2"><input type="submit" name="submit" value="Comment"></td></tr>
-			</table>
-		</form>	
+	
+</form>
 	</div>
-</div>
+
 
 		
 </body>

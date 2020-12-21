@@ -85,6 +85,36 @@ if (isset($_POST['login_user'])) {
   }
 }
 
-?>
- 
+$conn = new PDO('mysql:host=localhost;dbname=registration', 'root', '');
+if (isset($_POST["submit"])) {
+    $str = $_POST["search"];
+    $sth = $conn->prepare("SELECT * FROM `users` WHERE username = '$str'");
+
+    $sth->setFetchMode(PDO:: FETCH_OBJ);
+    $sth -> execute();
+
+    if($row = $sth->fetch())
+    {
+        ?>
+        <br><br><br>
+        <table>
+            <tr>
+                <th>username</th>
+                <th>email</th>
+            </tr>
+            <tr>
+                <td><?php echo $row->username; ?></td>
+                <td><?php echo $row->email; ?></td>
+            </tr>
+        </table>
+  <?php
+      }
+
+          else{
+              echo "Name doesn't exist";
+          }
+      }
+  ?>
+
+
 
