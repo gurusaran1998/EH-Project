@@ -1,72 +1,199 @@
-* {
-  margin: 0px;
-  padding: 0px;
-}
 body {
-  font-size: 120%;
-  background: #F8F8FF;
-}
-
-.header {
-  width: 30%;
-  margin: 50px auto 0px;
-  color: white;
-  background: #5F9EA0;
+  font-family: monospace;
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(./images/login.jpg);
+   background-size: cover;
+   background-attachment: fixed;
+ }
+ .login{
+  position: absolute;
+  top: 40%;
+  left: 49%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  border: 1px solid #B0C4DE;
-  border-bottom: none;
-  border-radius: 10px 10px 0px 0px;
-  padding: 20px;
+  color: #ffffff;
+  font-family: monopage;
+  font-size: 40px;
+  font-weight: bold;
+  
 }
- .content {
-  width: 30%;
-  margin: 0px auto;
-  padding: 20px;
-  border: 1px solid #B0C4DE;
-  background: white;
-  border-radius: 0px 0px 10px 10px;
+.register{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+color: #ffff;
+font-family: monospace;
+font-size: 40px;
+font-weight: bold;
+}
+.logo{
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: calc(50% - 50px);
+}
+a{
+  position: relative;
+  padding: 12px 36px;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  background: linear-gradient(90deg,#0162c8,#55e7fc);
+  
 }
 
-.input-group {
-  margin: 10px 0px 10px 0px;
+.loginbox{
+
+     background-color: hsl(0, 0%, 100%);
+     color: rgb(0, 0, 0);
+     top: 50%;
+     left: 50%;
+     position: absolute;
+     transform: translate(-50%,-50%);
+     box-sizing: content-box;
+     padding: 30px 30px;
+ }
+
+.registerbox{
+
+  width: 300px;
+  height: 600px;
+  background-color: hsl(0, 0%, 100%);
+  color: rgb(0, 0, 0);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: content-box;
+  padding: 30px 30px;
+  
 }
-.input-group label {
-  display: block;
-  text-align: left;
-  margin: 3px;
+
+.input-box
+{
+  border: 0;
+  border-bottom: 1px solid #918484;
+  background-color: #f7f7f7;
+  padding: 10px;
+  margin: 1px 0;
+  width: 90%;
+  outline: none;
 }
-.input-right{ 
-  float:right; 
-} 
-.input-group input {
-  height: 30px;
-  width: 93%;
-  padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid gray;
+
+.searchbox{
+
+  width: 400px;
+  height: 20px;
+  background-color: hsl(0, 0%, 100%);
+  color: rgb(0, 0, 0);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: content-box;
+  padding: 30px 30px;
 }
+
 .btn {
   padding: 10px;
   font-size: 15px;
   color: white;
-  background: #5F9EA0;
+  background: #7E017F;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
 }
+ 
 .error {
-  width: 92%; 
+  width: 90%; 
   margin: 0px auto; 
   padding: 10px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
+  border: 1px solid #aa3230; 
+  color: #ac3f3e; 
+  background: #f5d7d7; 
   border-radius: 5px; 
   text-align: left;
 }
-.success {
-  color: #3c763d; 
-  background: #dff0d8; 
-  border: 1px solid #3c763d;
-  margin-bottom: 20px;
+
+.homepage{
+  font-family: monospace;
+  position: absolute;
+  top: 6.5%;
+  left: 10%;
+  transform: translate(-50%,-50%);
+  color: rgb(247, 247, 247);
+  font-size: 35px;
+
 }
+
+.heading{
+  font-family: monospace;
+  position: absolute;
+  top: 7%;
+  left: 45%;
+  transform: translate(-50%,-50%);
+  color: rgb(247, 247, 247);
+  font-size: 35px;
+
+}
+
+ul{
+  position: absolute;
+  top: 9%;
+  left: 71%;
+  transform: translate(-50%,-50%);
+}
+ul li{
+  display: inline-block;
+}
+ul li a{
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+}
+ul li a:hover{
+  background-color: #fff;
+  color: #000;
+}
+ul li.active a{
+  background-color: #fff;
+  color: #000;
+}
+
+.center_content{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color:  rgb(255, 255, 255);
+  font-family: monospace;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.search-position{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.search{
+  border: 1px solid #918484;
+  top: 35%;
+  height: 40px;
+  width: 300px;
+  border-radius: 50px;
+  padding: 0px 20px;
+}
+.comment-box {
+	background: #F7F7F7;
+	border: #e0dfdf 1px solid;
+	padding: 20px;
+	border-radius: 2px;
+}
+
