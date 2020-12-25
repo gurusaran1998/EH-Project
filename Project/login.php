@@ -15,6 +15,7 @@
   		<?php include('errors.php'); ?>
   	
   		<h3>E-mail</h3>
+		  <i class="fa fa-user icon"></i>
   		<input type="text" id="email" name="email" class="input-box" placeholder="Enter Your E-mail" >
   		<h3>Password</h3>
   		<input type="password" id="password" class="input-box" name="password" placeholder="Enter Your Password"><br>
